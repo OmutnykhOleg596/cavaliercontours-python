@@ -2,7 +2,8 @@ import ctypes, pathlib
 import numpy as np
 
 module_root = pathlib.Path(__file__).resolve().parent
-libname = module_root / "lib/libCavalierContours.so"
+libname = str(os.path.join(module_root, "lib/libCavalierContours.so"))
+#libname = module_root / "lib/libCavalierContours.so"
 c_lib = ctypes.CDLL(libname)
 
 class _PointStruct(ctypes.Structure):
